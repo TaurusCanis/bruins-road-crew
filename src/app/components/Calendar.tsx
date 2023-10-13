@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Day from './Day';
+import Month from './Month';
 import "./Calendar.css";
 
 type CalendarProps = {
@@ -10,6 +11,7 @@ type CalendarProps = {
     games: {
       startDateTimeLocal: string;
       title: string;
+      location: string;
       // ... other fields
     }[];
   };
@@ -26,7 +28,7 @@ type CalendarProps = {
     const [currentMonth, setCurrentMonth] = useState(month);
     const [currentYear, setCurrentYear] = useState(year);
   
-    const gameMap: Record<number, typeof games[0]> = {};
+    const gameMap: Record<string, typeof games[0]> = {};
     games.forEach(game => {
         const date = new Date(game.startDateTimeLocal);
         const key = `${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
@@ -39,8 +41,11 @@ type CalendarProps = {
     const days: JSX.Element[] = [];
     for (let i = 1; i <= daysInMonth; i++) {
         const key = `${String(currentMonth + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
-        if (gameMap[key]) {
-            days.push(<Day key={i} day={i} game={gameMap[key]} />);
+        console.log("KEY: ", key)
+        
+        if (gameMap[key] !== undefined) {
+            const { title, location } = gameMap[key];
+            days.push(<Day key={i} day={i} game={{ title, location }} />);
         } else {
             days.push(<Day key={i} day={i} />);
         }
@@ -72,6 +77,7 @@ type CalendarProps = {
     
     return (
         <>
+            <Month />
             <h2>Or Choose a Date</h2>
             <div className="flex gap-1">
                 <button onClick={retreatMonth}>{"<"}</button>

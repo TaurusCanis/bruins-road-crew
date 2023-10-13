@@ -3,10 +3,9 @@ import AwayGame from "./AwayGame";
 
 type DayProps = {
     day: number;
-    game: {
+    game?: {
       title: string;
       location: string;
-      description: string;
       // ... other fields
     };
   };
