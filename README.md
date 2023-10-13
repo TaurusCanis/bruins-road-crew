@@ -18,8 +18,8 @@ The motivation behind the Bruins Road Crew project is to assist individuals who 
 
 - Recommendations: Users can discover popular eateries and entertainment venues frequented by Bruins fans, promoting a sense of community and shared experiences.
 
-This README.md was generator by Write My ReadMe - [Try it now!](https://write-my-readme.web.app/)
-
 ## Technologies Used
 
 This project is built using NextJS, a popular React framework that allows for efficient server-side rendering and easy deployment. By leveraging NextJS, the Bruins Road Crew project aims to deliver a seamless, fast, and user-friendly experience to Bruins fans. Additionally, NextJS provides a robust ecosystem of libraries and tools that contribute to the project's scalability and maintainability.
+
+This README.md was generator by Write My ReadMe - [Try it now!](https://write-my-readme.web.app/)
