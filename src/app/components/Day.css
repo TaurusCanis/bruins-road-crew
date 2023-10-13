@@ -1,0 +1,7 @@
+.away {
+    background-color: gold;
+}
+
+.away:hover {
+    cursor: pointer;
+}

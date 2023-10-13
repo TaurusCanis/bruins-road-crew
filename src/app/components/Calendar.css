@@ -1,0 +1,16 @@
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 16px;
+  }
+  
+  .week {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .day {
+    /* ... existing styles ... */
+    flex: 1;
+    text-align: center;
+  }
