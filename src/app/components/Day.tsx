@@ -1,5 +1,6 @@
 import "./Day.css"
 import AwayGame from "./AwayGame";
+import { formatTitle } from "@/utils";
 
 type DayProps = {
     day: number;
@@ -9,13 +10,6 @@ type DayProps = {
       // ... other fields
     };
   };
-
-  function formatTitle(title: string) {
-    const splitTitle = title.split("@");
-    return splitTitle[0].includes("Boston Bruins") ? 
-        splitTitle[1] : 
-        splitTitle[0].slice(2).trim(); // This removes the hockey stick emoji from the beginning of the title
-  }
   
   export default function Day({ day, game }: DayProps) {
     const isHome = game?.location === 'TD Garden';

@@ -1,17 +1,7 @@
-import Image from 'next/image'
+
+import HomeComponent from "./HomeComponent"
 import styles from './page.module.css'
-import teams from "../dummyData/teams.json"
-import schedule from "../dummyData/schedule.json"
-import Calendar from './components/Calendar'
-import TeamList from './components/TeamList'
-
-async function getTeamList() {
-  return teams;
-}
-
-async function getSchedule() {
-  return schedule;
-}
+import { getTeamList, getSchedule } from "@/utils";
 
 export default async function Home() {
   const teamList = await getTeamList();
@@ -19,8 +9,14 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <TeamList teamList={teamList} />
-      <Calendar month={8} year={2023} games={schedule} />
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content text-center">
+          <div className="max-w-md prose">
+            <h1>Boston Bruins Road Crew</h1>
+            <HomeComponent teamList={teamList} schedule={schedule} />
+          </div>
+        </div>
+      </div>
     </main>
   )
 }

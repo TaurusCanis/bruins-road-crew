@@ -77,7 +77,6 @@ type CalendarProps = {
     
     return (
         <>
-            <Month />
             <h2>Or Choose a Date</h2>
             <div className="flex gap-1">
                 <button onClick={retreatMonth}>{"<"}</button>
